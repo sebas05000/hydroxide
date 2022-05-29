@@ -11,7 +11,7 @@ require (
 	github.com/emersion/go-imap-specialuse v0.0.0-20201101201809-1ab93d3d150e
 	github.com/emersion/go-mbox v1.0.2
 	github.com/emersion/go-message v0.15.0
-	github.com/emersion/go-sasl v0.0.0-20211008083017-0b9dcfb154ac // indirect
+	github.com/sebas05000/go-sasl v0.0.0-20211008083017-0b9dcfb154ac // indirect
 	github.com/sebas05000/go-smtp v0.15.0
 	github.com/emersion/go-vcard v0.0.0-20220507122617-d4056df0ec4a
 	github.com/emersion/go-webdav v0.3.2-0.20220524091811-5d845721d8f7
