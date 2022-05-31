@@ -11,10 +11,10 @@ import (
 	"github.com/ProtonMail/go-crypto/openpgp"
 	"github.com/ProtonMail/go-crypto/openpgp/packet"
 	"github.com/emersion/go-message/mail"
-	"github.com/emersion/go-smtp"
+	"github.com/sebas05000/go-smtp"
 
-	"github.com/emersion/hydroxide/auth"
-	"github.com/emersion/hydroxide/protonmail"
+	"github.com/sebas05000/hydroxide/auth"
+	"github.com/sebas05000/hydroxide/protonmail"
 )
 
 func toPMAddressList(addresses []*mail.Address) []*protonmail.MessageAddress {

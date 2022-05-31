@@ -2,7 +2,7 @@ image: archlinux
 packages:
   - go
 sources:
-  - https://github.com/emersion/hydroxide.git
+  - https://github.com/sebas05000/hydroxide.git
 tasks:
   - build: |
       cd hydroxide
