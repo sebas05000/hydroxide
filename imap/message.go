@@ -11,9 +11,9 @@ import (
 	"strings"
 
 	"github.com/ProtonMail/go-crypto/openpgp"
-	"github.com/emersion/go-imap"
 	"github.com/emersion/go-message"
 	"github.com/emersion/go-message/mail"
+	"github.com/sebas05000/go-imap"
 
 	"github.com/sebas05000/hydroxide/protonmail"
 )

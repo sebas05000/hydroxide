@@ -6,9 +6,10 @@ import (
 	"sync"
 
 	"github.com/ProtonMail/go-crypto/openpgp"
-	"github.com/emersion/go-imap"
-	"github.com/emersion/go-imap-specialuse"
+	specialuse "github.com/emersion/go-imap-specialuse"
 	imapbackend "github.com/emersion/go-imap/backend"
+	"github.com/sebas05000/go-imap"
+	"github.com/sebas05000/go-imap-specialuse"
 
 	"github.com/sebas05000/hydroxide/events"
 	"github.com/sebas05000/hydroxide/imap/database"

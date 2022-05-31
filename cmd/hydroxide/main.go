@@ -13,11 +13,11 @@ import (
 
 	"github.com/ProtonMail/go-crypto/openpgp"
 	"github.com/ProtonMail/go-crypto/openpgp/armor"
-	imapmove "github.com/emersion/go-imap-move"
-	imapspacialuse "github.com/emersion/go-imap-specialuse"
-	imapserver "github.com/emersion/go-imap/server"
 	"github.com/emersion/go-mbox"
 	"github.com/mattn/go-isatty"
+	imapmove "github.com/sebas05000/go-imap-move"
+	imapspacialuse "github.com/sebas05000/go-imap-specialuse"
+	imapserver "github.com/sebas05000/go-imap/server"
 	"github.com/sebas05000/go-smtp"
 	"golang.org/x/crypto/ssh/terminal"
 
