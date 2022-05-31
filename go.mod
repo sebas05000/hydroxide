@@ -6,7 +6,7 @@ require (
 	github.com/ProtonMail/go-crypto v0.0.0-20220517143526-88bb52951d5b
 	github.com/boltdb/bolt v1.3.1
 	github.com/emersion/go-bcrypt v0.0.0-20170822072041-6e724a1baa63
-	github.com/sebas05000/go-imap v1.0.0
+	github.com/sebas05000/go-imap v1.1.1
 	github.com/sebas05000/go-imap-move v1.0.0
 	github.com/sebas05000/go-imap-specialuse v1.0.0
 	github.com/emersion/go-mbox v1.0.2
