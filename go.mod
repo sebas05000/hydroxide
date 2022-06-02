@@ -14,8 +14,8 @@ require (
 	github.com/sebas05000/go-imap v1.1.3
 	github.com/sebas05000/go-imap-move v1.1.2
 	github.com/sebas05000/go-imap-specialuse v1.1.2
-	github.com/sebas05000/go-smtp v1.0.0
-	golang.org/x/crypto v0.0.0-20220518034528-6f7dac969898
+	github.com/sebas05000/go-smtp v1.1.1
+	golang.org/x/crypto v0.0.0-20220525230936-793ad666bf5e
 	golang.org/x/sys v0.0.0-20220520151302-bc2c85ada10a // indirect
-	golang.org/x/term v0.0.0-20220411215600-e5f449aeb171 // indirect
+	golang.org/x/term v0.0.0-20220526004731-065cf7ba2467 // indirect
 )
