@@ -11,7 +11,7 @@ require (
 	github.com/emersion/go-vcard v0.0.0-20220507122617-d4056df0ec4a
 	github.com/emersion/go-webdav v0.3.2-0.20220524091811-5d845721d8f7
 	github.com/mattn/go-isatty v0.0.14
-	github.com/sebas05000/go-imap v1.1.2
+	github.com/sebas05000/go-imap v1.1.3
 	github.com/sebas05000/go-imap-move v1.1.2
 	github.com/sebas05000/go-imap-specialuse v1.1.2
 	github.com/sebas05000/go-smtp v1.0.0
