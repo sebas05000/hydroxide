@@ -28,6 +28,8 @@ github.com/sebas05000/go-sasl v1.0.0 h1:6U+0wccY44QBzCSwzhfsQNR9O7uaAJLQkBkv0YSB
 github.com/sebas05000/go-sasl v1.0.0/go.mod h1:iodGM25WxPpaiC+c3e1sUuTk+cq7Phbx3Lr6YqhEBoc=
 github.com/sebas05000/go-smtp v1.1.1 h1:1/XjO3LPoixDfc1G/3Lku0RvMcZvPmqG6Ecikta7xvQ=
 github.com/sebas05000/go-smtp v1.1.1/go.mod h1:gHd4gelJsTnnDZDBuaTqnnlBxO2/p1k/i8UTtqMZ+8M=
+github.com/sebas05000/go-smtp v1.1.2 h1:xnXTOKdgDSOeKUQovuEXdifnmigdfK+ITuy/o/ENv9Y=
+github.com/sebas05000/go-smtp v1.1.2/go.mod h1:gHd4gelJsTnnDZDBuaTqnnlBxO2/p1k/i8UTtqMZ+8M=
 golang.org/x/crypto v0.0.0-20210322153248-0c34fe9e7dc2/go.mod h1:T9bdIzuCu7OtxOm1hfPfRQxPLYneinmdGuTeoZ9dtd4=
 golang.org/x/crypto v0.0.0-20220525230936-793ad666bf5e h1:T8NU3HyQ8ClP4SEE+KbFlg6n0NhuTsN4MyznaarGsZM=
 golang.org/x/crypto v0.0.0-20220525230936-793ad666bf5e/go.mod h1:IxCIyHEi3zRg3s0A5j5BB6A9Jmi73HwBIUl50j+osU4=
