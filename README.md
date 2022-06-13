@@ -37,7 +37,7 @@ setup information.
 Start by installing hydroxide:
 
 ```shell
-git clone https://github.com/emersion/hydroxide.git
+git clone https://github.com/sebas05000/hydroxide.git
 GO111MODULE=on go build ./cmd/hydroxide
 ```
 
