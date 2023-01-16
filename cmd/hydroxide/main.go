@@ -14,12 +14,9 @@ import (
 	"github.com/ProtonMail/go-crypto/openpgp"
 	"github.com/ProtonMail/go-crypto/openpgp/armor"
 	"github.com/emersion/go-mbox"
-	"github.com/mattn/go-isatty"
-	imapmove "github.com/sebas05000/go-imap-move"
-	imapspacialuse "github.com/sebas05000/go-imap-specialuse"
 	imapserver "github.com/sebas05000/go-imap/server"
 	"github.com/sebas05000/go-smtp"
-	"golang.org/x/crypto/ssh/terminal"
+	"golang.org/x/term"
 
 	"github.com/sebas05000/hydroxide/auth"
 	"github.com/sebas05000/hydroxide/carddav"
@@ -42,14 +39,14 @@ var (
 func newClient() *protonmail.Client {
 	return &protonmail.Client{
 		RootURL:    apiEndpoint,
-		AppVersion: "web-mail@5.0.2.3",
+		AppVersion: "web-mail@5.0.14.11",
 		Debug:      debug,
 	}
 }
 
 func askPass(prompt string) ([]byte, error) {
 	f := os.Stdin
-	if !isatty.IsTerminal(f.Fd()) {
+	if !term.IsTerminal(int(f.Fd())) {
 		// This can happen if stdin is used for piping data
 		// TODO: the following assumes Unix
 		var err error
@@ -59,7 +56,7 @@ func askPass(prompt string) ([]byte, error) {
 		defer f.Close()
 	}
 	fmt.Fprintf(os.Stderr, "%v: ", prompt)
-	b, err := terminal.ReadPassword(int(f.Fd()))
+	b, err := term.ReadPassword(int(f.Fd()))
 	if err == nil {
 		fmt.Fprintf(os.Stderr, "\n")
 	}
@@ -103,9 +100,6 @@ func listenAndServeIMAP(addr string, debug bool, authManager *auth.Manager, even
 	if debug {
 		s.Debug = os.Stdout
 	}
-
-	s.Enable(imapspacialuse.NewExtension())
-	s.Enable(imapmove.NewExtension())
 
 	if s.TLSConfig != nil {
 		log.Println("IMAP server listening with TLS on", s.Addr)
