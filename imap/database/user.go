@@ -6,8 +6,8 @@ import (
 
 	"github.com/boltdb/bolt"
 
-	"github.com/sebas05000/hydroxide/config"
-	"github.com/sebas05000/hydroxide/protonmail"
+	"github.com/emersion/hydroxide/config"
+	"github.com/emersion/hydroxide/protonmail"
 )
 
 var ErrNotFound = errors.New("message not found in local database")

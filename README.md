@@ -37,8 +37,8 @@ setup information.
 Start by installing hydroxide:
 
 ```shell
-git clone https://github.com/sebas05000/hydroxide.git
-GO111MODULE=on go build ./cmd/hydroxide
+git clone https://github.com/emersion/hydroxide.git
+go build ./cmd/hydroxide
 ```
 
 Then you'll need to login to ProtonMail via hydroxide, so that hydroxide can

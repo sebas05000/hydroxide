@@ -5,7 +5,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/sebas05000/hydroxide/protonmail"
+	"github.com/emersion/hydroxide/protonmail"
 )
 
 const pollInterval = 30 * time.Second

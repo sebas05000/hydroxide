@@ -13,33 +13,37 @@ import (
 
 	"github.com/ProtonMail/go-crypto/openpgp"
 	"github.com/ProtonMail/go-crypto/openpgp/armor"
+	imapserver "github.com/emersion/go-imap/server"
 	"github.com/emersion/go-mbox"
-	imapserver "github.com/sebas05000/go-imap/server"
-	"github.com/sebas05000/go-smtp"
+	"github.com/emersion/go-smtp"
 	"golang.org/x/term"
 
-	"github.com/sebas05000/hydroxide/auth"
-	"github.com/sebas05000/hydroxide/carddav"
-	"github.com/sebas05000/hydroxide/config"
-	"github.com/sebas05000/hydroxide/events"
-	"github.com/sebas05000/hydroxide/exports"
-	imapbackend "github.com/sebas05000/hydroxide/imap"
-	"github.com/sebas05000/hydroxide/imports"
-	"github.com/sebas05000/hydroxide/protonmail"
-	smtpbackend "github.com/sebas05000/hydroxide/smtp"
+	"github.com/emersion/hydroxide/auth"
+	"github.com/emersion/hydroxide/carddav"
+	"github.com/emersion/hydroxide/config"
+	"github.com/emersion/hydroxide/events"
+	"github.com/emersion/hydroxide/exports"
+	imapbackend "github.com/emersion/hydroxide/imap"
+	"github.com/emersion/hydroxide/imports"
+	"github.com/emersion/hydroxide/protonmail"
+	smtpbackend "github.com/emersion/hydroxide/smtp"
 )
 
-const defaultAPIEndpoint = "https://mail.proton.me/api"
+const (
+	defaultAPIEndpoint = "https://mail.proton.me/api"
+	defaultAppVersion  = "Other"
+)
 
 var (
 	debug       bool
 	apiEndpoint string
+	appVersion  string
 )
 
 func newClient() *protonmail.Client {
 	return &protonmail.Client{
 		RootURL:    apiEndpoint,
-		AppVersion: "web-mail@5.0.14.11",
+		AppVersion: appVersion,
 		Debug:      debug,
 	}
 }
@@ -186,6 +190,8 @@ Global options:
 		Enable debug logs
 	-api-endpoint <url>
 		ProtonMail API endpoint
+	-app-version <version>
+		ProtonMail application version
 	-smtp-host example.com
 		Allowed SMTP email hostname on which hydroxide listens, defaults to 127.0.0.1
 	-imap-host example.com
@@ -218,6 +224,7 @@ Environment variables:
 func main() {
 	flag.BoolVar(&debug, "debug", false, "Enable debug logs")
 	flag.StringVar(&apiEndpoint, "api-endpoint", defaultAPIEndpoint, "ProtonMail API endpoint")
+	flag.StringVar(&appVersion, "app-version", defaultAppVersion, "ProtonMail app version")
 
 	smtpHost := flag.String("smtp-host", "127.0.0.1", "Allowed SMTP email hostname on which hydroxide listens, defaults to 127.0.0.1")
 	smtpPort := flag.String("smtp-port", "1025", "SMTP port on which hydroxide listens, defaults to 1025")
@@ -291,7 +298,7 @@ func main() {
 				log.Fatal(err)
 			}
 
-			if a.TwoFactor.Enabled == 1 {
+			if a.TwoFactor.Enabled != 0 {
 				if a.TwoFactor.TOTP != 1 {
 					log.Fatal("Only TOTP is supported as a 2FA method")
 				}

@@ -4,11 +4,11 @@ import (
 	"errors"
 	"sync"
 
-	"github.com/sebas05000/go-imap"
-	imapbackend "github.com/sebas05000/go-imap/backend"
+	"github.com/emersion/go-imap"
+	imapbackend "github.com/emersion/go-imap/backend"
 
-	"github.com/sebas05000/hydroxide/auth"
-	"github.com/sebas05000/hydroxide/events"
+	"github.com/emersion/hydroxide/auth"
+	"github.com/emersion/hydroxide/events"
 )
 
 var errNotYetImplemented = errors.New("not yet implemented")

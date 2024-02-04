@@ -13,8 +13,8 @@ import (
 	"golang.org/x/crypto/bcrypt"
 	"golang.org/x/crypto/nacl/secretbox"
 
-	"github.com/sebas05000/hydroxide/config"
-	"github.com/sebas05000/hydroxide/protonmail"
+	"github.com/emersion/hydroxide/config"
+	"github.com/emersion/hydroxide/protonmail"
 )
 
 func authFilePath() (string, error) {
@@ -134,7 +134,7 @@ func authenticate(c *protonmail.Client, cachedAuth *CachedAuth, username string)
 			return nil, fmt.Errorf("cannot re-authenticate: %v", err)
 		}
 
-		if auth.TwoFactor.Enabled == 1 {
+		if auth.TwoFactor.Enabled != 0 {
 			return nil, fmt.Errorf("cannot re-authenticate: two factor authentication enabled, please login again manually")
 		}
 	} else if err != nil {

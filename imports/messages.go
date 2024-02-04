@@ -8,7 +8,7 @@ import (
 	"github.com/ProtonMail/go-crypto/openpgp/armor"
 	"github.com/emersion/go-message/mail"
 
-	"github.com/sebas05000/hydroxide/protonmail"
+	"github.com/emersion/hydroxide/protonmail"
 )
 
 func ImportMessage(c *protonmail.Client, r io.Reader) error {
