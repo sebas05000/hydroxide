@@ -1,4 +1,4 @@
-module github.com/emersion/hydroxide
+module github.com/sebas05000/hydroxide
 
 go 1.13
 
@@ -11,9 +11,9 @@ require (
 	github.com/emersion/go-mbox v1.0.3
 	github.com/emersion/go-message v0.17.0
 	github.com/emersion/go-sasl v0.0.0-20231106173351-e73c9f7bad43 // indirect
-	github.com/emersion/go-smtp v0.19.0
 	github.com/emersion/go-vcard v0.0.0-20230815062825-8fda7d206ec9
 	github.com/emersion/go-webdav v0.3.2-0.20220524091811-5d845721d8f7
+	github.com/sebas05000/go-smtp v1.1.6
 	golang.org/x/crypto v0.15.0
 	golang.org/x/term v0.14.0
 )

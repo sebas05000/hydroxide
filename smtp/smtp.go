@@ -11,10 +11,10 @@ import (
 	"github.com/ProtonMail/go-crypto/openpgp"
 	"github.com/ProtonMail/go-crypto/openpgp/packet"
 	"github.com/emersion/go-message/mail"
-	"github.com/emersion/go-smtp"
+	"github.com/sebas05000/go-smtp"
 
-	"github.com/emersion/hydroxide/auth"
-	"github.com/emersion/hydroxide/protonmail"
+	"github.com/sebas05000/hydroxide/auth"
+	"github.com/sebas05000/hydroxide/protonmail"
 )
 
 func toPMAddressList(addresses []*mail.Address) []*protonmail.MessageAddress {
@@ -378,6 +378,32 @@ type session struct {
 }
 
 func (s *session) AuthPlain(username, password string) error {
+	c, privateKeys, err := s.be.sessions.Auth(username, password)
+	if err != nil {
+		return err
+	}
+
+	u, err := c.GetCurrentUser()
+	if err != nil {
+		return err
+	}
+
+	addrs, err := c.ListAddresses()
+	if err != nil {
+		return err
+	}
+
+	// TODO: decrypt private keys in u.Addresses
+
+	log.Printf("%s logged in", username)
+	s.c = c
+	s.u = u
+	s.privateKeys = privateKeys
+	s.addrs = addrs
+	return nil
+}
+
+func (s *session) AuthLogin(username, password string) error {
 	c, privateKeys, err := s.be.sessions.Auth(username, password)
 	if err != nil {
 		return err

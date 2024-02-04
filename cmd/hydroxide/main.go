@@ -15,18 +15,18 @@ import (
 	"github.com/ProtonMail/go-crypto/openpgp/armor"
 	imapserver "github.com/emersion/go-imap/server"
 	"github.com/emersion/go-mbox"
-	"github.com/emersion/go-smtp"
+	"github.com/sebas05000/go-smtp"
 	"golang.org/x/term"
 
-	"github.com/emersion/hydroxide/auth"
-	"github.com/emersion/hydroxide/carddav"
-	"github.com/emersion/hydroxide/config"
-	"github.com/emersion/hydroxide/events"
-	"github.com/emersion/hydroxide/exports"
-	imapbackend "github.com/emersion/hydroxide/imap"
-	"github.com/emersion/hydroxide/imports"
-	"github.com/emersion/hydroxide/protonmail"
-	smtpbackend "github.com/emersion/hydroxide/smtp"
+	"github.com/sebas05000/hydroxide/auth"
+	"github.com/sebas05000/hydroxide/carddav"
+	"github.com/sebas05000/hydroxide/config"
+	"github.com/sebas05000/hydroxide/events"
+	"github.com/sebas05000/hydroxide/exports"
+	imapbackend "github.com/sebas05000/hydroxide/imap"
+	"github.com/sebas05000/hydroxide/imports"
+	"github.com/sebas05000/hydroxide/protonmail"
+	smtpbackend "github.com/sebas05000/hydroxide/smtp"
 )
 
 const (
